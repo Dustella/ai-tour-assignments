@@ -1,4 +1,0 @@
-id,phone,name
-1,114,Name1
-2,514,Name2
-3,1919,Name3
