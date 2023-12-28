@@ -1,14 +1,24 @@
-from collections import Counter
+res = []
 
+for i in range(10):
+    content = input()
+    res.append(int(content))
 
-def count_letters(sentence):
-    sentence = sentence.lower().replace(" ", "")
-    letter_counts = Counter(sentence)
-    sorted_counts = sorted(letter_counts.items(),
-                           key=lambda x: x[1], reverse=True)
-    for letter, count in sorted_counts:
-        print(f"{letter}: {count}")
+msg = " ".join([str(i) for i in res])
+print(msg)
+print(f"avergae: {sum(res)/len(res)}")
 
+count_over_average = 0
 
-# Example usage:
-count_letters("hello world")
+for i in res:
+    if i > sum(res)/len(res):
+        count_over_average += 1
+
+print(f"over average count: {count_over_average}")
+
+# sort res
+res.sort(reverse=True)
+
+# output sorted res
+msg = " ".join([str(i) for i in res])
+print(f"sorted res: {msg}")
